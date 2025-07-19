@@ -1,1 +1,1 @@
-Python programming projects
+Miscellaneous Python programming projects
