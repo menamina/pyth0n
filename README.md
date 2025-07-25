@@ -1,1 +1,0 @@
-Miscellaneous Python programming projects
