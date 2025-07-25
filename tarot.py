@@ -32,6 +32,8 @@ tarot_cards = ["The Fool", "The Magician", "The High Priestess", "The Empress",
 
 side = ("in reverse", "right side up")
 
+num_of_cards = (1, 5, 7)
+
 def wait():
     time.sleep(3)
 
@@ -48,6 +50,5 @@ print("I can do general readings, love, career, finance, or health.")
 wait()
 
 wanted = input("Which would you like? 😊: ")
-
 
 
