@@ -30,25 +30,27 @@ tarot_cards = ("The Fool", "The Magician", "The High Priestess", "The Empress",
     "9 of Pentacles", "10 of Pentacles", "Page of Pentacles", "Knight of Pentacles",
     "Queen of Pentacles", "King of Pentacles")
 
-side = ("in reverse", "right side up")
+side = ("in reverse", "upright")
 
 num_of_cards = ("3", "5", "7")
+
+random_side = random.choice(side)
+
+random_3 = random.sample(tarot_cards, (3))
 
 def wait():
     time.sleep(3)
 
-
-
 # ----------------------------PROGRAM BELOW------------------------------------- #
 
 
-print("I see you're looking to get your fortune read.")
-name = input("My name is Genie, and you are?: ")
-wait()
-print(f"What kind of reading would you like today?")
-wait()
-print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
-wait()
+# print("I see you're looking to get your fortune read.")
+#name = input("My name is Genie, and you are?: ")
+#wait()
+#print(f"What kind of reading would you like today?")
+##wait()
+#print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
+#wait()
 
 wanted = input("Which would you like? 😊: ")
 
@@ -64,4 +66,9 @@ if wanted.lower() in options:
 
     if spread in num_of_cards:
         print(f"A {spread} card spread? Okay! Hang tight while I shuffle the deck.")
-        time.sleep(5)
+        wait()
+
+        if spread == "3":
+            print("\nYour cards in the order they fell:")
+            for cardPulled in random_3:
+                print(f"{cardPulled} {random_side}")
