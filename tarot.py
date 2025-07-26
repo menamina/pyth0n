@@ -57,7 +57,7 @@ print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
 wait()
 
 while True:
-    wanted = input("Which would you like? 😊: ").lower()
+    wanted = input("\nWhich would you like? 😊: ").lower()
 
     while wanted not in options:
         print("\nThe options are: general, love, career, finance, and health.")
@@ -95,9 +95,6 @@ while True:
 
             word = input("If so, just say the magic word 'magic' otherwise say the not magic word 'no': ").lower()
 
-            while word != "no" or word != "magic":
-                word = input("must enter the word 'no' to quit or 'magic' for another reading. \notherwise you're stuck here forever: ")
-                
             if word == "no":
                 print("\nThanks for stopping by, take care!")
                 break
