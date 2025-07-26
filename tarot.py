@@ -37,38 +37,71 @@ num_of_cards = ("3", "5", "7")
 random_side = random.choice(side)
 
 random_3 = random.sample(tarot_cards, (3))
+random_5 = random.sample(tarot_cards, (5))
+random_7 = random.sample(tarot_cards, (7))
+
 
 def wait():
     time.sleep(3)
 
+
 # ----------------------------PROGRAM BELOW------------------------------------- #
 
 
-# print("I see you're looking to get your fortune read.")
-#name = input("My name is Genie, and you are?: ")
-#wait()
-#print(f"What kind of reading would you like today?")
-##wait()
-#print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
-#wait()
+print("I see you're looking to get your fortune read.")
+name = input("My name is Genie, and you are?: ").capitalize()
+wait()
+print(f"Nice to meet you! What kind of reading would you like today?")
+wait()
+print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
+wait()
 
-wanted = input("Which would you like? 😊: ")
+while True:
+    wanted = input("Which would you like? 😊: ").lower()
 
-while wanted.lower() not in options:
-    print("\nThe options are: general, love, career, finance, and health.")
-    wanted = input("Please choose from the options above 😊: ")
+    while wanted not in options:
+        print("\nThe options are: general, love, career, finance, and health.")
+        wanted = input("Please choose from the options above 😊: ").lower()
 
-if wanted.lower() in options:
-    spread = input("\nAnd would you like a 3, 5, or 7 card spread?: ")
+    if wanted in options:
+        spread = input("\nAnd would you like a 3, 5, or 7 card spread?: ")
 
-    while spread not in num_of_cards:
-        spread = input("\nPlease choose a 3, 5, 7 card spread: ")
+        while spread not in num_of_cards:
+            spread = input("\nPlease choose a 3, 5, 7 card spread: ")
 
-    if spread in num_of_cards:
-        print(f"A {spread} card spread? Okay! Hang tight while I shuffle the deck.")
-        wait()
+        if spread in num_of_cards:
+            print(f"A {spread} card {wanted} reading today? Okay! Hang tight while I shuffle the deck.")
+            wait()
 
-        if spread == "3":
-            print("\nYour cards in the order they fell:")
-            for cardPulled in random_3:
-                print(f"{cardPulled} {random_side}")
+            if spread == "3":
+                print("\nYour cards in the order they fell:")
+                wait()
+                for cardPulled in random_3:
+                    print(f"{cardPulled} {random_side}")
+
+            if spread == "5":
+                print("\nYour cards in the order they fell:")
+                wait()
+                for cardPulled in random_5:
+                    print(f"{cardPulled} {random_side}")
+
+            if spread == "7":
+                print("\nYour cards in the order they fell:")
+                wait()
+                for cardPulled in random_7:
+                    print(f"{cardPulled} {random_side}")
+        
+            print(f"\nWell {name}, it was a pleasure to read your cards today. Would you like another one?")
+
+            word = input("If so, just say the magic word 'magic' otherwise say the not magic word 'no': ").lower()
+
+            while word != "no" or word != "magic":
+                word = input("must enter the word 'no' to quit or 'magic' for another reading. \notherwise you're stuck here forever: ")
+                
+            if word == "no":
+                print("\nThanks for stopping by, take care!")
+                break
+
+            if word == "magic":
+                continue
+
