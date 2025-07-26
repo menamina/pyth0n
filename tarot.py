@@ -6,9 +6,9 @@
 import random
 import time
 
-options = "general", "love", "career", "finance", "health"
+options = ("general", "love", "career", "finance", "health")
 
-tarot_cards = ["The Fool", "The Magician", "The High Priestess", "The Empress",
+tarot_cards = ("The Fool", "The Magician", "The High Priestess", "The Empress",
     "The Emperor", "The Hierophant", "The Lovers", "The Chariot",
     "Strength", "The Hermit", "Wheel of Fortune", "Justice",
     "The Hanged Man", "Death", "Temperance", "The Devil",
@@ -28,14 +28,15 @@ tarot_cards = ["The Fool", "The Magician", "The High Priestess", "The Empress",
     "Ace of Pentacles", "2 of Pentacles", "3 of Pentacles", "4 of Pentacles",
     "5 of Pentacles", "6 of Pentacles", "7 of Pentacles", "8 of Pentacles",
     "9 of Pentacles", "10 of Pentacles", "Page of Pentacles", "Knight of Pentacles",
-    "Queen of Pentacles", "King of Pentacles"]
+    "Queen of Pentacles", "King of Pentacles")
 
 side = ("in reverse", "right side up")
 
-num_of_cards = (1, 5, 7)
+num_of_cards = ("3", "5", "7")
 
 def wait():
     time.sleep(3)
+
 
 
 # ----------------------------PROGRAM BELOW------------------------------------- #
@@ -46,9 +47,21 @@ name = input("My name is Genie, and you are?: ")
 wait()
 print(f"What kind of reading would you like today?")
 wait()
-print("I can do general readings, love, career, finance, or health.")
+print("I can do 'general', 'love', 'career', 'finance', or 'health' readings.")
 wait()
 
 wanted = input("Which would you like? 😊: ")
 
+while wanted.lower() not in options:
+    print("\nThe options are: general, love, career, finance, and health.")
+    wanted = input("Please choose from the options above 😊: ")
 
+if wanted.lower() in options:
+    spread = input("\nAnd would you like a 3, 5, or 7 card spread?: ")
+
+    while spread not in num_of_cards:
+        spread = input("\nPlease choose a 3, 5, 7 card spread: ")
+
+    if spread in num_of_cards:
+        print(f"A {spread} card spread? Okay! Hang tight while I shuffle the deck.")
+        time.sleep(5)
