@@ -9,6 +9,7 @@ q3 = input("Drinks: water, juice, wine, beer, whiskey, selter")
 q4 = input("Physical activity: cardio, weights, calesthenics, yoga, none: ")
 q5 = input("Music: pop, punk, rock, reggae, indie, motown, kpop: ")
 
+score = 0
 
 characterList1 = ["Abigail",
 "Alex",
